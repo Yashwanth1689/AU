@@ -1,0 +1,1 @@
+"C:\Users\admin\AppData\Local\UiPath\app-20.2.0-beta0108\UiRobot.exe" -f "C:\Users\admin\Documents\UiPath\HR_Process\HR_Process\Source Code\Main.xaml"

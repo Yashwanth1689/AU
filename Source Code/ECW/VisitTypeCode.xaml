@@ -1,0 +1,815 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="test" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="http://schemas.uipath.com/workflow/activities/cv" xmlns:p1="http://schemas.uipath.com/workflow/activities/ocr" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Drawing;assembly=System.Drawing" xmlns:sd1="clr-namespace:System.Data;assembly=System.Data" xmlns:this="clr-namespace:" xmlns:uc="clr-namespace:UiPath.CV;assembly=UiPath.CV" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="visitname" Type="InArgument(uc:CvDescriptor)" />
+  </x:Members>
+  <this:test.visitname>
+    <InArgument x:TypeArguments="uc:CvDescriptor" />
+  </this:test.visitname>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1240,4523</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>test_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="52">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>UiPath.Mail</x:String>
+      <x:String>UiPath.Mail.Activities.Utils</x:String>
+      <x:String>UiPath.Mail.Activities.Business.HtmlEditor</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.Mail.Activities.Business</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>Microsoft.Exchange.WebServices.Data</x:String>
+      <x:String>UiPath.Mail.Exchange</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.Mail.Exchange.Activities</x:String>
+      <x:String>UiPath.Mail.Outlook.Activities</x:String>
+      <x:String>UiPath.Mail.Activities</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+      <x:String>Microsoft.VisualBasic.CompilerServices</x:String>
+      <x:String>UiPath.CV</x:String>
+      <x:String>UiPath.Shared.ObjectLibrary</x:String>
+      <x:String>UiPath.CV.Activities</x:String>
+      <x:String>UiPath.CV.Activities.Interfaces</x:String>
+      <x:String>UiPath.Vision.OCR</x:String>
+      <x:String>UiPath.OCR.Contracts</x:String>
+      <x:String>UiPath.OCR.Activities</x:String>
+      <x:String>UiPath.OCR.Contracts.Activities</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="78">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.Word.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.Exchange.WebServices</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Word</AssemblyReference>
+      <AssemblyReference>UiPath.CV</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.CV.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Vision.Core</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Contracts</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap:VirtualizedContainerService.HintSize="646,4338" sap2010:WorkflowViewState.IdRef="Sequence_23">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:Boolean" Name="IslastRowFound" />
+      <Variable x:TypeArguments="x:String" Name="extractedVisitTypeStr" />
+      <Variable x:TypeArguments="x:String" Name="visitTypeStr" />
+      <Variable x:TypeArguments="sd1:DataTable" Name="visitTypeDt" />
+      <Variable x:TypeArguments="sd1:DataTable" Name="finalVisitTypeDt" />
+      <Variable x:TypeArguments="x:Int32" Name="scrollNum" />
+      <Variable x:TypeArguments="sd1:DataTable" Name="tempDt" />
+      <Variable x:TypeArguments="x:Int32" Name="Inc" />
+      <Variable x:TypeArguments="x:String" Name="wbPath" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:InterruptibleDoWhile Condition="[IslastRowFound=False]" DisplayName="Do While" sap:VirtualizedContainerService.HintSize="604,1391" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1">
+      <ui:InterruptibleDoWhile.Body>
+        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="568,1226" sap2010:WorkflowViewState.IdRef="Sequence_17">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:TextExists FormattedText="{x:Null}" DisplayName="Text Exists 'client'" sap:VirtualizedContainerService.HintSize="526,134" sap2010:WorkflowViewState.IdRef="TextExists_1" Occurrence="1" Result="[IslastRowFound]" Text="zOp Note">
+            <ui:TextExists.Target>
+              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="af368f7d-5542-4181-a993-ef057661b368" InformativeScreenshot="657b9b4f2878de8215262b36eba0c6d7" Selector="&lt;wnd app='eclinicalworks.exe' cls='ThunderRT6FormDC' title='Select Visit Type Code' /&gt;&lt;wnd cls='VSFlexGridL' /&gt;&lt;ctrl role='client' /&gt;" TimeoutMS="1000">
+                <ui:Target.WaitForReady>
+                  <InArgument x:TypeArguments="ui:WaitForReady" />
+                </ui:Target.WaitForReady>
+              </ui:Target>
+            </ui:TextExists.Target>
+          </ui:TextExists>
+          <Sequence DisplayName="Screen Scraping" sap:VirtualizedContainerService.HintSize="526,960" sap2010:WorkflowViewState.IdRef="Sequence_16">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Attach Window 'SelectVis Thunderrt'" sap:VirtualizedContainerService.HintSize="484,344" sap2010:WorkflowViewState.IdRef="WindowScope_1" InformativeScreenshot="f7ada93c49651b47389cc11fdf74d1d2" Selector="&lt;wnd app='eclinicalworks.exe' cls='ThunderRT6FormDC' title='Select Visit Type Code' /&gt;">
+              <ui:WindowScope.Body>
+                <ActivityAction x:TypeArguments="x:Object">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+                  </ActivityAction.Argument>
+                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,198" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:GetVisibleText WordsInfo="{x:Null}" DisplayName="Get Visible Text 'client'" FormattedText="False" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetVisibleText_1">
+                      <ui:GetVisibleText.Target>
+                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="ce9b682b-ddb0-4655-b618-6d8c25fb6db0" InformativeScreenshot="5bda7403c0b084ee4a351122570d0b9c" Selector="&lt;wnd cls='VSFlexGridL' /&gt;&lt;ctrl role='client' /&gt;">
+                          <ui:Target.TimeoutMS>
+                            <InArgument x:TypeArguments="x:Int32" />
+                          </ui:Target.TimeoutMS>
+                          <ui:Target.WaitForReady>
+                            <InArgument x:TypeArguments="ui:WaitForReady" />
+                          </ui:Target.WaitForReady>
+                        </ui:Target>
+                      </ui:GetVisibleText.Target>
+                      <ui:GetVisibleText.Text>
+                        <OutArgument x:TypeArguments="x:String">[extractedVisitTypeStr]</OutArgument>
+                      </ui:GetVisibleText.Text>
+                    </ui:GetVisibleText>
+                  </Sequence>
+                </ActivityAction>
+              </ui:WindowScope.Body>
+            </ui:WindowScope>
+            <If Condition="[IslastRowFound=False]" sap:VirtualizedContainerService.HintSize="484,384" sap2010:WorkflowViewState.IdRef="If_1">
+              <If.Then>
+                <Sequence sap:VirtualizedContainerService.HintSize="376,198" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'push button  Page down'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_12" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="False">
+                    <ui:Click.CursorPosition>
+                      <ui:CursorPosition Position="Center">
+                        <ui:CursorPosition.OffsetX>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:CursorPosition.OffsetX>
+                        <ui:CursorPosition.OffsetY>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:CursorPosition.OffsetY>
+                      </ui:CursorPosition>
+                    </ui:Click.CursorPosition>
+                    <ui:Click.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="917b24dc-4ec1-4c18-93ed-3e2ad793d624" InformativeScreenshot="b92ed87c6c8354a0b63acf388c16a6fd" Selector="&lt;wnd app='eclinicalworks.exe' cls='ThunderRT6FormDC' title='Select Visit Type Code' /&gt;&lt;wnd cls='VSFlexGridL' /&gt;&lt;ctrl automationid='NonClientVerticalScrollBar' /&gt;&lt;ctrl automationid='DownPageButton' /&gt;" WaitForReady="NONE">
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                      </ui:Target>
+                    </ui:Click.Target>
+                  </ui:Click>
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence sap2010:WorkflowViewState.IdRef="Sequence_15">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </Sequence>
+              </If.Else>
+            </If>
+            <Assign sap:VirtualizedContainerService.HintSize="484,60" sap2010:WorkflowViewState.IdRef="Assign_6">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[visitTypeStr]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">[visitTypeStr + Environment.NewLine + extractedVisitTypeStr]</InArgument>
+              </Assign.Value>
+            </Assign>
+          </Sequence>
+        </Sequence>
+      </ui:InterruptibleDoWhile.Body>
+    </ui:InterruptibleDoWhile>
+    <ui:GenerateDataTable ColumnSeparators="{x:Null}" ColumnSizes="{x:Null}" NewLineSeparator="{x:Null}" Positions="{x:Null}" DataTable="[visitTypeDt]" DisplayName="Generate Data Table" sap:VirtualizedContainerService.HintSize="604,200" sap2010:WorkflowViewState.IdRef="GenerateDataTable_1" Input="[visitTypeStr]" />
+    <ui:RemoveDuplicateRows DataTable="[visitTypeDt]" DisplayName="Remove Duplicate Rows" sap:VirtualizedContainerService.HintSize="604,79" sap2010:WorkflowViewState.IdRef="RemoveDuplicateRows_1" OutputDataTable="[finalVisitTypeDt]" />
+    <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="Scroll Number" DataTable="[finalVisitTypeDt]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="604,185" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_1" />
+    <Assign sap:VirtualizedContainerService.HintSize="604,60" sap2010:WorkflowViewState.IdRef="Assign_7">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[finalVisitTypeDt.Columns("Column1").ColumnName]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">Visit Type Description</InArgument>
+      </Assign.Value>
+    </Assign>
+    <ui:WriteRange AddHeaders="True" DataTable="[finalVisitTypeDt]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="604,115" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="Sheet1" StartingCell="A1" WorkbookPath="C:\Users\pradeep.v\OneDrive - The Advanced Company\Documents\UiPath\Advanced_Urology\Advanced_Urology\Documents\Bot Interactions\Configurations\VisitTypeConfiguration.xlsx" />
+    <Assign sap:VirtualizedContainerService.HintSize="604,60" sap2010:WorkflowViewState.IdRef="Assign_8">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[wbPath]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">
+          <Literal x:TypeArguments="x:String" Value="" />
+        </InArgument>
+      </Assign.Value>
+    </Assign>
+    <ui:ExcelApplicationScope Password="{x:Null}" AutoSave="False" CreateNewFile="False" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="604,260" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" InstanceCachePeriod="3000" Visible="False" WorkbookPath="C:\Users\pradeep.v\OneDrive - The Advanced Company\Documents\UiPath\Advanced_Urology\Advanced_Urology\Documents\Bot Interactions\Macros\UpdateScrollNum.xlsm">
+      <ui:ExcelApplicationScope.Body>
+        <ActivityAction x:TypeArguments="ui:WorkbookApplication">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,151" sap2010:WorkflowViewState.IdRef="Sequence_18">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:ExecuteMacro ContinueOnError="{x:Null}" MacroOutput="{x:Null}" DisplayName="Execute Macro" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="ExecuteMacro_1" MacroName="updateScrollNum" MacroParameters="[{&quot;&quot;+ wbPath +&quot;&quot;}]" />
+          </Sequence>
+        </ActivityAction>
+      </ui:ExcelApplicationScope.Body>
+    </ui:ExcelApplicationScope>
+    <Sequence DisplayName="Visit Type Code" sap:VirtualizedContainerService.HintSize="604,1576" sap2010:WorkflowViewState.IdRef="Sequence_22">
+      <Sequence.Variables>
+        <Variable x:TypeArguments="x:String" Name="Ecw_Visit_Types" />
+        <Variable x:TypeArguments="s:String[]" Name="VisitTypeArr" />
+        <Variable x:TypeArguments="sd1:DataTable" Name="visitTypeDt" />
+        <Variable x:TypeArguments="x:String" Name="scrollNum" />
+      </Sequence.Variables>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:ReadRange AddHeaders="True" DataTable="[visitTypeDt]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ReadRange_2" SheetName="Sheet1" WorkbookPath="C:\Users\pradeep.v\OneDrive - The Advanced Company\Documents\UiPath\Advanced_Urology\Advanced_Urology\Documents\Bot Interactions\Configurations\VisitTypeConfiguration.xlsx">
+        <ui:ReadRange.Range>
+          <InArgument x:TypeArguments="x:String">
+            <Literal x:TypeArguments="x:String" Value="" />
+          </InArgument>
+        </ui:ReadRange.Range>
+      </ui:ReadRange>
+      <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_9">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[Ecw_Visit_Types]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">["CON NP (Consult),CON NP GYN (Consult New Patient GYN),NP (New Patient),NP Annual (New Patient Annual Visit),NP CONSULT (NP Cancer Consult),NP GYN (New Patient GYN),NP Tele (NP Telehealth),NP VasCon (NP Vasectomy Consult),NP Work In (NP Work In),NPMedcaid (NP Medicaid GYN)"]</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_10">
+        <Assign.To>
+          <OutArgument x:TypeArguments="s:String[]">[VisitTypeArr]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="s:String[]">[Split(Ecw_Visit_Types, ",")]</InArgument>
+        </Assign.Value>
+      </Assign>
+      <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'push button  ...'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_13" KeyModifiers="None" MouseButton="BTN_LEFT">
+        <ui:Click.CursorPosition>
+          <ui:CursorPosition Position="Center">
+            <ui:CursorPosition.OffsetX>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:CursorPosition.OffsetX>
+            <ui:CursorPosition.OffsetY>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:CursorPosition.OffsetY>
+          </ui:CursorPosition>
+        </ui:Click.CursorPosition>
+        <ui:Click.Target>
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="963f918a-3a2e-489b-9a6a-1bd4dbdb6c4e" InformativeScreenshot="0432aecb077a11f937da3085bd6fa308" Selector="&lt;wnd app='eclinicalworks.exe' cls='ThunderRT6FormDC' title='eClinicalWorks (V,Pradeep )  ' /&gt;&lt;wnd cls='ThunderRT6FormDC' title='Lookup Encounters / Patients' /&gt;&lt;wnd cls='ThunderRT6Frame' title='Frame1' /&gt;&lt;wnd cls='ThunderRT6CommandButton' title='...' /&gt;&lt;ctrl name='...' role='push button' /&gt;">
+            <ui:Target.TimeoutMS>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:Target.TimeoutMS>
+            <ui:Target.WaitForReady>
+              <InArgument x:TypeArguments="ui:WaitForReady" />
+            </ui:Target.WaitForReady>
+          </ui:Target>
+        </ui:Click.Target>
+      </ui:Click>
+      <ui:ClickText ContinueOnError="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" FormattedText="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click Text 'client'" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="ClickText_5" KeyModifiers="None" MouseButton="BTN_LEFT" Occurrence="1" Text="Visit Type Code">
+        <ui:ClickText.CursorPosition>
+          <ui:CursorPosition OffsetX="-90" OffsetY="-2" Position="Center" />
+        </ui:ClickText.CursorPosition>
+        <ui:ClickText.Target>
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="9b212f20-eb00-49d6-b109-b75742570dcc" InformativeScreenshot="25d4aeccdb4d9154636fb0717f008ee8" Selector="&lt;wnd app='eclinicalworks.exe' cls='ThunderRT6FormDC' title='Select Visit Type Code' /&gt;&lt;wnd cls='VSFlexGridL' /&gt;&lt;ctrl role='client' /&gt;">
+            <ui:Target.TimeoutMS>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:Target.TimeoutMS>
+            <ui:Target.WaitForReady>
+              <InArgument x:TypeArguments="ui:WaitForReady" />
+            </ui:Target.WaitForReady>
+          </ui:Target>
+        </ui:ClickText.Target>
+      </ui:ClickText>
+      <ui:ClickText ContinueOnError="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" FormattedText="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click Text 'client'" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="ClickText_6" KeyModifiers="None" MouseButton="BTN_LEFT" Occurrence="1" Text="ARM">
+        <ui:ClickText.CursorPosition>
+          <ui:CursorPosition OffsetX="-61" OffsetY="-2" Position="Center" />
+        </ui:ClickText.CursorPosition>
+        <ui:ClickText.Target>
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="9b212f20-eb00-49d6-b109-b75742570dcc" InformativeScreenshot="25d4aeccdb4d9154636fb0717f008ee8" Selector="&lt;wnd app='eclinicalworks.exe' cls='ThunderRT6FormDC' title='Select Visit Type Code' /&gt;&lt;wnd cls='VSFlexGridL' /&gt;&lt;ctrl role='client' /&gt;">
+            <ui:Target.TimeoutMS>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:Target.TimeoutMS>
+            <ui:Target.WaitForReady>
+              <InArgument x:TypeArguments="ui:WaitForReady" />
+            </ui:Target.WaitForReady>
+          </ui:Target>
+        </ui:ClickText.Target>
+      </ui:ClickText>
+      <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'ThunderRT6CommandButton'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_14" KeyModifiers="None" MouseButton="BTN_LEFT">
+        <ui:Click.CursorPosition>
+          <ui:CursorPosition Position="Center">
+            <ui:CursorPosition.OffsetX>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:CursorPosition.OffsetX>
+            <ui:CursorPosition.OffsetY>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:CursorPosition.OffsetY>
+          </ui:CursorPosition>
+        </ui:Click.CursorPosition>
+        <ui:Click.Target>
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="dfea2d68-4407-4c79-b3d1-187ce8474706" InformativeScreenshot="9bd7f86a2d99ae081ec23f3f09af7daf" Selector="&lt;wnd app='eclinicalworks.exe' cls='ThunderRT6FormDC' title='Select Visit Type Code' /&gt;&lt;wnd aaname='OK' cls='ThunderRT6CommandButton' title='&amp;amp;OK' /&gt;">
+            <ui:Target.TimeoutMS>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:Target.TimeoutMS>
+            <ui:Target.WaitForReady>
+              <InArgument x:TypeArguments="ui:WaitForReady" />
+            </ui:Target.WaitForReady>
+          </ui:Target>
+        </ui:Click.Target>
+      </ui:Click>
+      <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="ForEach`1_5" Values="[VisitTypeArr]">
+        <ui:ForEach.Body>
+          <ActivityAction x:TypeArguments="x:String">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="x:String" Name="visitName" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="454,1192" sap2010:WorkflowViewState.IdRef="Sequence_21">
+              <Sequence.Variables>
+                <Variable x:TypeArguments="sd1:DataTable" Name="filteredVisitTypeDt" />
+                <Variable x:TypeArguments="x:Int32" Name="incNum" />
+              </Sequence.Variables>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:FilterDataTable DataTable="[visitTypeDt]" DisplayName="Filter Data Table" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="412,160" sap2010:WorkflowViewState.IdRef="FilterDataTable_2" OutputDataTable="[filteredVisitTypeDt]" SelectColumnsMode="Keep">
+                <ui:FilterDataTable.Filters>
+                  <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
+                    <ui:FilterOperationArgument BooleanOperator="And" Operator="EQ">
+                      <ui:FilterOperationArgument.Column>
+                        <InArgument x:TypeArguments="x:String">["Visit Type Description"]</InArgument>
+                      </ui:FilterOperationArgument.Column>
+                      <ui:FilterOperationArgument.Operand>
+                        <InArgument x:TypeArguments="x:String">[visitName]</InArgument>
+                      </ui:FilterOperationArgument.Operand>
+                    </ui:FilterOperationArgument>
+                  </scg:List>
+                </ui:FilterDataTable.Filters>
+                <ui:FilterDataTable.SelectColumns>
+                  <scg:List x:TypeArguments="InArgument" Capacity="4">
+                    <x:Null />
+                  </scg:List>
+                </ui:FilterDataTable.SelectColumns>
+              </ui:FilterDataTable>
+              <Assign sap:VirtualizedContainerService.HintSize="412,60" sap2010:WorkflowViewState.IdRef="Assign_11">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:String">[scrollNum]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:String">[filteredVisitTypeDt.rows(0).item(1).tostring]</InArgument>
+                </Assign.Value>
+              </Assign>
+              <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'push button  ...'" sap:VirtualizedContainerService.HintSize="412,106" sap2010:WorkflowViewState.IdRef="Click_15" KeyModifiers="None" MouseButton="BTN_LEFT">
+                <ui:Click.CursorPosition>
+                  <ui:CursorPosition Position="Center">
+                    <ui:CursorPosition.OffsetX>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:CursorPosition.OffsetX>
+                    <ui:CursorPosition.OffsetY>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:CursorPosition.OffsetY>
+                  </ui:CursorPosition>
+                </ui:Click.CursorPosition>
+                <ui:Click.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="963f918a-3a2e-489b-9a6a-1bd4dbdb6c4e" InformativeScreenshot="0432aecb077a11f937da3085bd6fa308" Selector="&lt;wnd app='eclinicalworks.exe' cls='ThunderRT6FormDC' title='eClinicalWorks (V,Pradeep )  ' /&gt;&lt;wnd cls='ThunderRT6FormDC' title='Lookup Encounters / Patients' /&gt;&lt;wnd cls='ThunderRT6Frame' title='Frame1' /&gt;&lt;wnd cls='ThunderRT6CommandButton' title='...' /&gt;&lt;ctrl name='...' role='push button' /&gt;">
+                    <ui:Target.TimeoutMS>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:Target.TimeoutMS>
+                    <ui:Target.WaitForReady>
+                      <InArgument x:TypeArguments="ui:WaitForReady" />
+                    </ui:Target.WaitForReady>
+                  </ui:Target>
+                </ui:Click.Target>
+              </ui:Click>
+              <Assign sap:VirtualizedContainerService.HintSize="412,60" sap2010:WorkflowViewState.IdRef="Assign_12">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:Int32">[incNum]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:Int32">1</InArgument>
+                </Assign.Value>
+              </Assign>
+              <ui:InterruptibleWhile Condition="[incNum&lt;=int32.Parse(scrollNum)]" DisplayName="While" sap:VirtualizedContainerService.HintSize="412,463" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_2">
+                <ui:InterruptibleWhile.Body>
+                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="376,298" sap2010:WorkflowViewState.IdRef="Sequence_19">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_13">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:Int32">[incNum]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:Int32">[incNum+1]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                    <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'push button  Page down'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_16" KeyModifiers="None" MouseButton="BTN_LEFT">
+                      <ui:Click.CursorPosition>
+                        <ui:CursorPosition Position="Center">
+                          <ui:CursorPosition.OffsetX>
+                            <InArgument x:TypeArguments="x:Int32" />
+                          </ui:CursorPosition.OffsetX>
+                          <ui:CursorPosition.OffsetY>
+                            <InArgument x:TypeArguments="x:Int32" />
+                          </ui:CursorPosition.OffsetY>
+                        </ui:CursorPosition>
+                      </ui:Click.CursorPosition>
+                      <ui:Click.Target>
+                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="3a658d7a-71a3-4f4d-a9df-f7795642cdf7" InformativeScreenshot="74cbdf40b398d7fff9f1fdb98de4c887" Selector="&lt;wnd app='eclinicalworks.exe' cls='ThunderRT6FormDC' title='Select Visit Type Code' /&gt;&lt;wnd cls='VSFlexGridL' /&gt;&lt;ctrl automationid='NonClientVerticalScrollBar' /&gt;&lt;ctrl automationid='DownPageButton' /&gt;">
+                          <ui:Target.TimeoutMS>
+                            <InArgument x:TypeArguments="x:Int32" />
+                          </ui:Target.TimeoutMS>
+                          <ui:Target.WaitForReady>
+                            <InArgument x:TypeArguments="ui:WaitForReady" />
+                          </ui:Target.WaitForReady>
+                        </ui:Target>
+                      </ui:Click.Target>
+                    </ui:Click>
+                  </Sequence>
+                </ui:InterruptibleWhile.Body>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </ui:InterruptibleWhile>
+              <p:CVScope ContinueOnError="{x:Null}" DelayBefore="{x:Null}" Server="{x:Null}" CvMethod="ElementDetection, OCR" DesignTimeCacheId="3e73dc62-91db-4458-a93d-d4c379ec93f4" DisplayName="CV Screen Scope 'client'" sap:VirtualizedContainerService.HintSize="412,51" sap2010:WorkflowViewState.IdRef="CVScope_2" Version="V3">
+                <p:CVScope.Body>
+                  <ActivityAction x:TypeArguments="x:Object">
+                    <ActivityAction.Argument>
+                      <DelegateInArgument x:TypeArguments="x:Object" Name="CVSessionData" />
+                    </ActivityAction.Argument>
+                    <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,374" sap2010:WorkflowViewState.IdRef="Sequence_20">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <p:CvCheckWithDescriptor InRegion="{x:Null}" Action="Check" Descriptor="[&quot;Target: CheckBox (2,129,13,13)&quot; +&#xA;&quot;Anchor: Text &quot;+ &quot;'&quot; + visitName+ &quot;'&quot;+ &quot; (50,130,34,12)&quot;]" DesignTimeCacheId="3e73dc62-91db-4458-a93d-d4c379ec93f4" DesignTimeScaleFactor="1" DisplayName="CV Check - CheckBox" sap:VirtualizedContainerService.HintSize="400,136" sap2010:WorkflowViewState.IdRef="CvCheckWithDescriptor_2" InformativeScreenshot="d332b1d16f4e9b8d355ff281cd52a59f" Version="V3">
+                        <p:CvCheckWithDescriptor.DesignTimeDescriptor>
+                          <uc:CvDescriptor>
+                            <uc:CvDescriptor.Anchors>
+                              <x:Array Type="uc:CvElementDescriptor">
+                                <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="50, 130, 34, 12" ElementType="Text" Text="Cysto" />
+                              </x:Array>
+                            </uc:CvDescriptor.Anchors>
+                            <uc:CvDescriptor.Target>
+                              <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="2, 129, 13, 13" ElementType="CheckBox" />
+                            </uc:CvDescriptor.Target>
+                          </uc:CvDescriptor>
+                        </p:CvCheckWithDescriptor.DesignTimeDescriptor>
+                      </p:CvCheckWithDescriptor>
+                      <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'ThunderRT6CommandButton'" sap:VirtualizedContainerService.HintSize="400,106" sap2010:WorkflowViewState.IdRef="Click_17" KeyModifiers="None" MouseButton="BTN_LEFT">
+                        <ui:Click.CursorPosition>
+                          <ui:CursorPosition Position="Center">
+                            <ui:CursorPosition.OffsetX>
+                              <InArgument x:TypeArguments="x:Int32" />
+                            </ui:CursorPosition.OffsetX>
+                            <ui:CursorPosition.OffsetY>
+                              <InArgument x:TypeArguments="x:Int32" />
+                            </ui:CursorPosition.OffsetY>
+                          </ui:CursorPosition>
+                        </ui:Click.CursorPosition>
+                        <ui:Click.Target>
+                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="dfea2d68-4407-4c79-b3d1-187ce8474706" InformativeScreenshot="9bd7f86a2d99ae081ec23f3f09af7daf" Selector="&lt;wnd app='eclinicalworks.exe' cls='ThunderRT6FormDC' title='Select Visit Type Code' /&gt;&lt;wnd aaname='OK' cls='ThunderRT6CommandButton' title='&amp;amp;OK' /&gt;">
+                            <ui:Target.TimeoutMS>
+                              <InArgument x:TypeArguments="x:Int32" />
+                            </ui:Target.TimeoutMS>
+                            <ui:Target.WaitForReady>
+                              <InArgument x:TypeArguments="ui:WaitForReady" />
+                            </ui:Target.WaitForReady>
+                          </ui:Target>
+                        </ui:Click.Target>
+                      </ui:Click>
+                    </Sequence>
+                  </ActivityAction>
+                </p:CVScope.Body>
+                <p:CVScope.DesignTimeCache>
+                  <uc:CVCache CvUiElements="{x:Null}" OcrTexts="{x:Null}" />
+                </p:CVScope.DesignTimeCache>
+                <p:CVScope.DesignTimeCacheContainer>
+                  <uc:CvCacheContainer>
+                    <uc:CvCacheContainer.Caches>
+                      <scg:List x:TypeArguments="uc:CVCache" Capacity="1">
+                        <uc:CVCache DisplayName="Screen CV Check - '(DEPO' (Main)" Id="3e73dc62-91db-4458-a93d-d4c379ec93f4" InformativeScreenshot="b49b5c530104427112988bd148fd8d28" LogicalPosition="517, 252" OcrText="Visit Type Code COLPO (COLPOSCOPY) CON FU (Consult) CON NP (Consult) CON NP GYN (Consult New Patient GYN) COVID ASC (COVID ASC) COVID19 (Screened) CREATEFLDR (CREATE HOSPITAL FOLDER ON Cysto (Cysto) DEPO (DEPO PROVERA) DM SURGERY (DM SURGERY) DUPLICATE (DUPLICATE) EST ANNUAL (EST ANNUAL VISIT) EST NP GYN (Established New Patient GYN) Eligard (Eligard) Est NP (Established New Patient)" Position="517, 252" ScreenshotGuid="298a312c-b537-4ddc-83d9-9003c1f479b4" ServerVersion="1">
+                          <uc:CVCache.CvTables>
+                            <x:Array Type="uc:CvTableInfo">
+                              <uc:CvTableInfo>
+                                <uc:CvTableInfo.Columns>
+                                  <x:Array Type="x:Int32">
+                                    <x:Int32>3</x:Int32>
+                                    <x:Int32>48</x:Int32>
+                                    <x:Int32>312</x:Int32>
+                                  </x:Array>
+                                </uc:CvTableInfo.Columns>
+                                <uc:CvTableInfo.Rows>
+                                  <x:Array Type="x:Int32">
+                                    <x:Int32>0</x:Int32>
+                                    <x:Int32>14</x:Int32>
+                                    <x:Int32>29</x:Int32>
+                                    <x:Int32>46</x:Int32>
+                                    <x:Int32>63</x:Int32>
+                                    <x:Int32>77</x:Int32>
+                                    <x:Int32>93</x:Int32>
+                                    <x:Int32>109</x:Int32>
+                                    <x:Int32>125</x:Int32>
+                                    <x:Int32>141</x:Int32>
+                                    <x:Int32>157</x:Int32>
+                                    <x:Int32>173</x:Int32>
+                                    <x:Int32>189</x:Int32>
+                                    <x:Int32>204</x:Int32>
+                                    <x:Int32>220</x:Int32>
+                                    <x:Int32>236</x:Int32>
+                                    <x:Int32>252</x:Int32>
+                                  </x:Array>
+                                </uc:CvTableInfo.Rows>
+                              </uc:CvTableInfo>
+                            </x:Array>
+                          </uc:CVCache.CvTables>
+                          <uc:CVCache.CvUiElements>
+                            <scg:List x:TypeArguments="uc:CvElementInfo" Capacity="64">
+                              <uc:CvElementInfo Category="CheckBox" Region="2, 33, 13, 13" />
+                              <uc:CvElementInfo Category="CheckBox" Region="2, 49, 13, 13" />
+                              <uc:CvElementInfo Category="CheckBox" Region="2, 97, 13, 13" />
+                              <uc:CvElementInfo Category="CheckBox" Region="2, 65, 13, 13" />
+                              <uc:CvElementInfo Category="CheckBox" Region="2, 81, 13, 13" />
+                              <uc:CvElementInfo Category="CheckBox" Region="1, 177, 14, 13" />
+                              <uc:CvElementInfo Category="CheckBox" Region="1, 113, 13, 13" />
+                              <uc:CvElementInfo Category="CheckBox" Region="2, 193, 13, 13" />
+                              <uc:CvElementInfo Category="CheckBox" Region="2, 209, 13, 13" />
+                              <uc:CvElementInfo Category="CheckBox" Region="1, 161, 14, 14" />
+                              <uc:CvElementInfo Category="CheckBox" Region="2, 241, 13, 13" />
+                              <uc:CvElementInfo Category="CheckBox" Region="1, 145, 14, 14" />
+                              <uc:CvElementInfo Category="CheckBox" Region="2, 225, 13, 13" />
+                              <uc:CvElementInfo Category="CheckBox" Region="2, 129, 13, 13" />
+                              <uc:CvElementInfo Category="CheckBox" Region="1, 17, 14, 13" />
+                              <uc:CvElementInfo Category="CheckBox" Region="1, 1, 14, 14" />
+                              <uc:CvElementInfo Category="Cell" Region="3, 220, 45, 16" />
+                              <uc:CvElementInfo Category="Cell" Region="3, 125, 45, 16" />
+                              <uc:CvElementInfo Category="Cell" Region="3, 109, 45, 16" />
+                              <uc:CvElementInfo Category="Cell" Region="3, 189, 45, 15" />
+                              <uc:CvElementInfo Category="Cell" Region="3, 204, 45, 16" />
+                              <uc:CvElementInfo Category="Cell" Region="3, 173, 45, 16" />
+                              <uc:CvElementInfo Category="Cell" Region="48, 157, 264, 16" />
+                              <uc:CvElementInfo Category="Cell" Region="3, 236, 45, 16" />
+                              <uc:CvElementInfo Category="Cell" Region="48, 220, 264, 16" />
+                              <uc:CvElementInfo Category="Cell" Region="48, 109, 264, 16" />
+                              <uc:CvElementInfo Category="Cell" Region="3, 14, 45, 15" />
+                              <uc:CvElementInfo Category="Cell" Region="3, 157, 45, 16" />
+                              <uc:CvElementInfo Category="Cell" Region="48, 173, 264, 16" />
+                              <uc:CvElementInfo Category="Cell" Region="3, 141, 45, 16" />
+                              <uc:CvElementInfo Category="Cell" Region="3, 93, 45, 16" />
+                              <uc:CvElementInfo Category="Cell" Region="48, 125, 264, 16" />
+                              <uc:CvElementInfo Category="Cell" Region="48, 46, 264, 17" />
+                              <uc:CvElementInfo Category="Cell" Region="3, 77, 45, 16" />
+                              <uc:CvElementInfo Category="Cell" Region="48, 141, 264, 16" />
+                              <uc:CvElementInfo Category="Cell" Region="3, 0, 45, 14" />
+                              <uc:CvElementInfo Category="Cell" Region="3, 29, 45, 17" />
+                              <uc:CvElementInfo Category="Cell" Region="48, 29, 264, 17" />
+                              <uc:CvElementInfo Category="Cell" Region="48, 63, 264, 14" />
+                              <uc:CvElementInfo Category="Cell" Region="3, 63, 45, 14" />
+                              <uc:CvElementInfo Category="Cell" Region="48, 14, 264, 15" />
+                              <uc:CvElementInfo Category="Cell" Region="48, 93, 264, 16" />
+                              <uc:CvElementInfo Category="Cell" Region="48, 0, 264, 14" />
+                              <uc:CvElementInfo Category="Cell" Region="48, 189, 264, 15" />
+                              <uc:CvElementInfo Category="Cell" Region="48, 204, 264, 16" />
+                              <uc:CvElementInfo Category="Cell" Region="48, 77, 264, 16" />
+                              <uc:CvElementInfo Category="Cell" Region="3, 46, 45, 17" />
+                              <uc:CvElementInfo Category="Button" Confidence="Runtime" Region="52, 0, 262, 16" />
+                              <uc:CvElementInfo Category="InputBox" Confidence="Runtime" Region="51, 15, 263, 17" />
+                              <uc:CvElementInfo Category="InputBox" Confidence="Runtime" Region="76, 0, 235, 15" />
+                              <uc:CvElementInfo Category="Icon" Confidence="Runtime" Region="1, 1, 15, 13" />
+                              <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="48, 236, 264, 16" />
+                            </scg:List>
+                          </uc:CVCache.CvUiElements>
+                          <uc:CVCache.OcrTexts>
+                            <scg:List x:TypeArguments="uc:OcrTextInfo" Capacity="64">
+                              <uc:OcrTextInfo Region="49, 2, 27, 11" Text="Visit" />
+                              <uc:OcrTextInfo Region="78, 2, 28, 13" Text="Type" />
+                              <uc:OcrTextInfo Region="109, 2, 31, 11" Text="Code" />
+                              <uc:OcrTextInfo Region="50, 18, 41, 11" Text="COLPO" />
+                              <uc:OcrTextInfo Region="93, 17, 92, 14" Text="(COLPOSCOPY)" />
+                              <uc:OcrTextInfo Region="50, 34, 27, 11" Text="CON" />
+                              <uc:OcrTextInfo Region="80, 34, 15, 11" Text="FU" />
+                              <uc:OcrTextInfo Region="98, 33, 54, 14" Text="(Consult)" />
+                              <uc:OcrTextInfo Region="50, 50, 27, 11" Text="CON" />
+                              <uc:OcrTextInfo Region="80, 50, 17, 11" Text="NP" />
+                              <uc:OcrTextInfo Region="100, 49, 53, 14" Text="(Consult)" />
+                              <uc:OcrTextInfo Region="49, 66, 28, 11" Text="CON" />
+                              <uc:OcrTextInfo Region="79, 66, 18, 11" Text="NP" />
+                              <uc:OcrTextInfo Region="99, 66, 25, 11" Text="GYN" />
+                              <uc:OcrTextInfo Region="126, 65, 51, 14" Text="(Consult" />
+                              <uc:OcrTextInfo Region="179, 67, 25, 10" Text="New" />
+                              <uc:OcrTextInfo Region="207, 66, 41, 11" Text="Patient" />
+                              <uc:OcrTextInfo Region="250, 66, 30, 13" Text="GYN)" />
+                              <uc:OcrTextInfo Region="50, 82, 42, 11" Text="COVID" />
+                              <uc:OcrTextInfo Region="93, 82, 28, 11" Text="ASC" />
+                              <uc:OcrTextInfo Region="123, 81, 46, 14" Text="(COVID" />
+                              <uc:OcrTextInfo Region="172, 82, 31, 13" Text="ASC)" />
+                              <uc:OcrTextInfo Region="49, 98, 56, 11" Text="COVID19" />
+                              <uc:OcrTextInfo Region="108, 97, 65, 14" Text="(Screened)" />
+                              <uc:OcrTextInfo Region="48, 114, 77, 11" Text="CREATEFLDR" />
+                              <uc:OcrTextInfo Region="128, 113, 52, 14" Text="(CREATE" />
+                              <uc:OcrTextInfo Region="182, 114, 59, 11" Text="HOSPITAL" />
+                              <uc:OcrTextInfo Region="243, 114, 46, 11" Text="FOLDER" />
+                              <uc:OcrTextInfo Region="292, 114, 18, 11" Text="ON" />
+                              <uc:OcrTextInfo Region="50, 130, 34, 12" Text="Cysto" />
+                              <uc:OcrTextInfo Region="87, 129, 43, 14" Text="(Cysto)" />
+                              <uc:OcrTextInfo Region="50, 146, 33, 11" Text="DEPO" />
+                              <uc:OcrTextInfo Region="86, 145, 38, 14" Text="(DEPO" />
+                              <uc:OcrTextInfo Region="127, 146, 60, 12" Text="PROVERA)" />
+                              <uc:OcrTextInfo Region="50, 162, 19, 11" Text="DM" />
+                              <uc:OcrTextInfo Region="71, 162, 58, 11" Text="SURGERY" />
+                              <uc:OcrTextInfo Region="131, 161, 25, 14" Text="(DM" />
+                              <uc:OcrTextInfo Region="158, 161, 61, 14" Text="SURGERY)" />
+                              <uc:OcrTextInfo Region="49, 178, 68, 11" Text="DUPLICATE" />
+                              <uc:OcrTextInfo Region="119, 178, 76, 13" Text="(DUPLICATE)" />
+                              <uc:OcrTextInfo Region="49, 194, 24, 11" Text="EST" />
+                              <uc:OcrTextInfo Region="75, 194, 49, 11" Text="ANNUAL" />
+                              <uc:OcrTextInfo Region="126, 193, 29, 14" Text="(EST" />
+                              <uc:OcrTextInfo Region="157, 194, 48, 11" Text="ANNUAL" />
+                              <uc:OcrTextInfo Region="207, 194, 39, 12" Text="VISIT)" />
+                              <uc:OcrTextInfo Region="49, 210, 24, 11" Text="EST" />
+                              <uc:OcrTextInfo Region="75, 210, 18, 11" Text="NP" />
+                              <uc:OcrTextInfo Region="95, 210, 26, 11" Text="GYN" />
+                              <uc:OcrTextInfo Region="123, 209, 70, 13" Text="(Established" />
+                              <uc:OcrTextInfo Region="196, 210, 25, 11" Text="New" />
+                              <uc:OcrTextInfo Region="224, 210, 41, 11" Text="Patient" />
+                              <uc:OcrTextInfo Region="267, 210, 30, 13" Text="GYN)" />
+                              <uc:OcrTextInfo Region="50, 225, 40, 14" Text="Eligard" />
+                              <uc:OcrTextInfo Region="93, 225, 50, 14" Text="(Eligard)" />
+                              <uc:OcrTextInfo Region="49, 242, 20, 11" Text="Est" />
+                              <uc:OcrTextInfo Region="71, 242, 16, 11" Text="NP" />
+                              <uc:OcrTextInfo Region="90, 241, 70, 13" Text="(Established" />
+                              <uc:OcrTextInfo Region="163, 242, 26, 11" Text="New" />
+                              <uc:OcrTextInfo Region="191, 242, 45, 11" Text="Patient)" />
+                            </scg:List>
+                          </uc:CVCache.OcrTexts>
+                        </uc:CVCache>
+                      </scg:List>
+                    </uc:CvCacheContainer.Caches>
+                  </uc:CvCacheContainer>
+                </p:CVScope.DesignTimeCacheContainer>
+                <p:CVScope.OCREngine>
+                  <ActivityFunc x:TypeArguments="sd:Image, scg:IEnumerable(scg:KeyValuePair(sd:Rectangle, x:String))">
+                    <ActivityFunc.Argument>
+                      <DelegateInArgument x:TypeArguments="sd:Image" Name="Image" />
+                    </ActivityFunc.Argument>
+                    <p1:UiPathScreenOCR ApiKey="{x:Null}" Endpoint="{x:Null}" Output="{x:Null}" Text="{x:Null}" UseLocalServer="{x:Null}" ComputeSkewAngle="False" ExtractWords="True" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="UiPathScreenOCR_2" Image="[Image]" Language="en" Profile="Screen" Scale="1" Timeout="100000" />
+                  </ActivityFunc>
+                </p:CVScope.OCREngine>
+                <p:CVScope.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="980300a4-2777-41ab-98a7-6e087582a131" InformativeScreenshot="a1d49454a42232597ed646c51d40c9ec" Selector="&lt;wnd app='eclinicalworks.exe' cls='ThunderRT6FormDC' title='Select Visit Type Code' /&gt;&lt;wnd cls='VSFlexGridL' /&gt;&lt;ctrl role='client' /&gt;" WaitForReady="INTERACTIVE">
+                    <ui:Target.TimeoutMS>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:Target.TimeoutMS>
+                  </ui:Target>
+                </p:CVScope.Target>
+                <p:CVScope.UseLocalServer>
+                  <InArgument x:TypeArguments="x:Boolean" />
+                </p:CVScope.UseLocalServer>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </p:CVScope>
+            </Sequence>
+          </ActivityAction>
+        </ui:ForEach.Body>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:ForEach>
+      <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'push button  ...'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_18" KeyModifiers="None" MouseButton="BTN_LEFT">
+        <ui:Click.CursorPosition>
+          <ui:CursorPosition Position="Center">
+            <ui:CursorPosition.OffsetX>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:CursorPosition.OffsetX>
+            <ui:CursorPosition.OffsetY>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:CursorPosition.OffsetY>
+          </ui:CursorPosition>
+        </ui:Click.CursorPosition>
+        <ui:Click.Target>
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="963f918a-3a2e-489b-9a6a-1bd4dbdb6c4e" InformativeScreenshot="0432aecb077a11f937da3085bd6fa308" Selector="&lt;wnd app='eclinicalworks.exe' cls='ThunderRT6FormDC' title='eClinicalWorks (V,Pradeep )  ' /&gt;&lt;wnd cls='ThunderRT6FormDC' title='Lookup Encounters / Patients' /&gt;&lt;wnd cls='ThunderRT6Frame' title='Frame1' /&gt;&lt;wnd cls='ThunderRT6CommandButton' title='...' /&gt;&lt;ctrl name='...' role='push button' /&gt;">
+            <ui:Target.TimeoutMS>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:Target.TimeoutMS>
+            <ui:Target.WaitForReady>
+              <InArgument x:TypeArguments="ui:WaitForReady" />
+            </ui:Target.WaitForReady>
+          </ui:Target>
+        </ui:Click.Target>
+      </ui:Click>
+      <ui:ClickText ContinueOnError="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" FormattedText="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click Text 'client'" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="ClickText_7" KeyModifiers="None" MouseButton="BTN_LEFT" Occurrence="1" Text="ARM">
+        <ui:ClickText.CursorPosition>
+          <ui:CursorPosition OffsetX="-61" OffsetY="-2" Position="Center" />
+        </ui:ClickText.CursorPosition>
+        <ui:ClickText.Target>
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="9b212f20-eb00-49d6-b109-b75742570dcc" InformativeScreenshot="25d4aeccdb4d9154636fb0717f008ee8" Selector="&lt;wnd app='eclinicalworks.exe' cls='ThunderRT6FormDC' title='Select Visit Type Code' /&gt;&lt;wnd cls='VSFlexGridL' /&gt;&lt;ctrl role='client' /&gt;">
+            <ui:Target.TimeoutMS>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:Target.TimeoutMS>
+            <ui:Target.WaitForReady>
+              <InArgument x:TypeArguments="ui:WaitForReady" />
+            </ui:Target.WaitForReady>
+          </ui:Target>
+        </ui:ClickText.Target>
+      </ui:ClickText>
+      <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'ThunderRT6CommandButton'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_19" KeyModifiers="None" MouseButton="BTN_LEFT">
+        <ui:Click.CursorPosition>
+          <ui:CursorPosition Position="Center">
+            <ui:CursorPosition.OffsetX>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:CursorPosition.OffsetX>
+            <ui:CursorPosition.OffsetY>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:CursorPosition.OffsetY>
+          </ui:CursorPosition>
+        </ui:Click.CursorPosition>
+        <ui:Click.Target>
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="dfea2d68-4407-4c79-b3d1-187ce8474706" InformativeScreenshot="9bd7f86a2d99ae081ec23f3f09af7daf" Selector="&lt;wnd app='eclinicalworks.exe' cls='ThunderRT6FormDC' title='Select Visit Type Code' /&gt;&lt;wnd aaname='OK' cls='ThunderRT6CommandButton' title='&amp;amp;OK' /&gt;">
+            <ui:Target.TimeoutMS>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:Target.TimeoutMS>
+            <ui:Target.WaitForReady>
+              <InArgument x:TypeArguments="ui:WaitForReady" />
+            </ui:Target.WaitForReady>
+          </ui:Target>
+        </ui:Click.Target>
+      </ui:Click>
+    </Sequence>
+  </Sequence>
+</Activity>
