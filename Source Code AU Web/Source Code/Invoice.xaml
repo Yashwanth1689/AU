@@ -1,0 +1,413 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Invoice" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="847.3333333333334,475.33333333333326" sap2010:WorkflowViewState.IdRef="Invoice_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Invoice" sap:VirtualizedContainerService.HintSize="512,195.33333333333334" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Sequence DisplayName="test" sap:VirtualizedContainerService.HintSize="548.6666666666666,3126.6666666666665" sap2010:WorkflowViewState.IdRef="Sequence_2">
+      <Sequence.Variables>
+        <Variable x:TypeArguments="x:String" Name="excel" />
+        <Variable x:TypeArguments="scg:List(x:String)" Name="excelSheets" />
+        <Variable x:TypeArguments="x:String" Default="1578810" Name="ObjectId" />
+        <Variable x:TypeArguments="x:Boolean" Name="IsScreenClosed" />
+        <Variable x:TypeArguments="x:Boolean" Name="isBulkTabClosed" />
+      </Sequence.Variables>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <Assign sap:VirtualizedContainerService.HintSize="486.6666666666667,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_1">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[ObjectId]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">1177688</InArgument>
+        </Assign.Value>
+      </Assign>
+      <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_DOUBLE" DisplayName="Click 'TD'" sap:VirtualizedContainerService.HintSize="486.6666666666667,107.33333333333333" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT">
+        <ui:Click.CursorPosition>
+          <ui:CursorPosition Position="Center">
+            <ui:CursorPosition.OffsetX>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:CursorPosition.OffsetX>
+            <ui:CursorPosition.OffsetY>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:CursorPosition.OffsetY>
+          </ui:CursorPosition>
+        </ui:Click.CursorPosition>
+        <ui:Click.Target>
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="c4f80b4b-c67d-481b-8321-c0ac3b4ce857" InformativeScreenshot="74639fcb6fb1cbbe543fb843d71ebd65" Selector="[string.Format(&quot;&lt;html app='chrome.exe' title='VM Assign Work PROD - UTS (V8.0)' /&gt;&lt;webctrl aria-role='gridcell' tableRow='1' tag='TD' aaname='{0}' /&gt;&quot;, objectId)]" WaitForReady="COMPLETE">
+            <ui:Target.TimeoutMS>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:Target.TimeoutMS>
+          </ui:Target>
+        </ui:Click.Target>
+      </ui:Click>
+      <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'DIV'" sap:VirtualizedContainerService.HintSize="486.6666666666667,107.33333333333333" sap2010:WorkflowViewState.IdRef="Click_2" KeyModifiers="None" MouseButton="BTN_LEFT">
+        <ui:Click.CursorPosition>
+          <ui:CursorPosition Position="Center">
+            <ui:CursorPosition.OffsetX>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:CursorPosition.OffsetX>
+            <ui:CursorPosition.OffsetY>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:CursorPosition.OffsetY>
+          </ui:CursorPosition>
+        </ui:Click.CursorPosition>
+        <ui:Click.Target>
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="7dbc6c41-6f94-447e-9e51-8ebe5dc3f81e" InformativeScreenshot="59737b7e58673432622f4b13c7a764ac" Selector="&lt;html app='chrome.exe' title='VM Assign Work PROD - UTS (V8.0)' /&gt;&lt;webctrl aria-role='button' tag='DIV' aria-label='Hide Attribute Table' /&gt;" WaitForReady="COMPLETE">
+            <ui:Target.TimeoutMS>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:Target.TimeoutMS>
+          </ui:Target>
+        </ui:Click.Target>
+      </ui:Click>
+      <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'DIV'" sap:VirtualizedContainerService.HintSize="486.6666666666667,107.33333333333333" sap2010:WorkflowViewState.IdRef="Click_3" KeyModifiers="None" MouseButton="BTN_LEFT">
+        <ui:Click.CursorPosition>
+          <ui:CursorPosition Position="Center">
+            <ui:CursorPosition.OffsetX>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:CursorPosition.OffsetX>
+            <ui:CursorPosition.OffsetY>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:CursorPosition.OffsetY>
+          </ui:CursorPosition>
+        </ui:Click.CursorPosition>
+        <ui:Click.Target>
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="d92fc7ce-8700-4bc0-8d98-2efb1ce13810" InformativeScreenshot="847652d2a71a14bdf442d95d5c0612be" Selector="&lt;html app='chrome.exe' title='VM Assign Work PROD - UTS (V8.0)' /&gt;&lt;webctrl tag='DIV' uipath-html-title='Assign Invoice Bulk Update- Ready For Invoicing - Work Point' /&gt;" WaitForReady="COMPLETE">
+            <ui:Target.TimeoutMS>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:Target.TimeoutMS>
+          </ui:Target>
+        </ui:Click.Target>
+      </ui:Click>
+      <ui:OnUiElementAppear ContinueOnError="{x:Null}" FoundElement="{x:Null}" RepeatForever="{x:Null}" WaitActive="{x:Null}" DisplayName="On Element Appear 'DIV'" sap:VirtualizedContainerService.HintSize="486.6666666666667,395.3333333333333" sap2010:WorkflowViewState.IdRef="OnUiElementAppear_1" WaitVisible="True">
+        <ui:OnUiElementAppear.Body>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,218" sap2010:WorkflowViewState.IdRef="Sequence_3">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:Click AlterIfDisabled="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DelayBefore="2000" DisplayName="Click 'DIV'" sap:VirtualizedContainerService.HintSize="388,107.33333333333333" sap2010:WorkflowViewState.IdRef="Click_4" KeyModifiers="None" MouseButton="BTN_LEFT">
+              <ui:Click.CursorPosition>
+                <ui:CursorPosition Position="Center">
+                  <ui:CursorPosition.OffsetX>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:CursorPosition.OffsetX>
+                  <ui:CursorPosition.OffsetY>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:CursorPosition.OffsetY>
+                </ui:CursorPosition>
+              </ui:Click.CursorPosition>
+              <ui:Click.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="3af51402-0c87-4cb7-b1f5-60034a4adb91" InformativeScreenshot="7664e5c48764e19b46328b8e4d0b0dee" Selector="&lt;html app='chrome.exe' title='VM Assign Work PROD - UTS (V8.0)' /&gt;&lt;webctrl aria-role='button' tag='DIV' class='draw-item point-icon' /&gt;" WaitForReady="COMPLETE">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                </ui:Target>
+              </ui:Click.Target>
+            </ui:Click>
+          </Sequence>
+        </ui:OnUiElementAppear.Body>
+        <ui:OnUiElementAppear.Target>
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="b7252753-321f-4079-a15f-2e2db59dcf92" InformativeScreenshot="c9a8d429a306191b4b838e5ea6d01591" Selector="&lt;html app='chrome.exe' title='VM Assign Work PROD - UTS (V8.0)' /&gt;&lt;webctrl isleaf='1' tag='DIV' class='handle' parentclass='title' /&gt;" TimeoutMS="60000" WaitForReady="COMPLETE" />
+        </ui:OnUiElementAppear.Target>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:OnUiElementAppear>
+      <ui:OnUiElementAppear ContinueOnError="{x:Null}" FoundElement="{x:Null}" RepeatForever="{x:Null}" WaitActive="{x:Null}" DisplayName="On Element Appear 'DIV'" sap:VirtualizedContainerService.HintSize="486.6666666666667,345.3333333333333" sap2010:WorkflowViewState.IdRef="OnUiElementAppear_2" WaitVisible="True">
+        <ui:OnUiElementAppear.Body>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,218" sap2010:WorkflowViewState.IdRef="Sequence_4">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'CIRCLE'" sap:VirtualizedContainerService.HintSize="388,107.33333333333333" sap2010:WorkflowViewState.IdRef="Click_5" KeyModifiers="None" MouseButton="BTN_LEFT">
+              <ui:Click.CursorPosition>
+                <ui:CursorPosition Position="Center">
+                  <ui:CursorPosition.OffsetX>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:CursorPosition.OffsetX>
+                  <ui:CursorPosition.OffsetY>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:CursorPosition.OffsetY>
+                </ui:CursorPosition>
+              </ui:Click.CursorPosition>
+              <ui:Click.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="2172a0d9-fd39-4c25-87e5-7dd492b3a3f4" InformativeScreenshot="805b9a02cdf34ff1e72fe026d46eacd3" Selector="&lt;html app='chrome.exe' title='VM Assign Work PROD - UTS (V8.0)' /&gt;&lt;webctrl tag='circle' /&gt;" WaitForReady="COMPLETE">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                </ui:Target>
+              </ui:Click.Target>
+            </ui:Click>
+          </Sequence>
+        </ui:OnUiElementAppear.Body>
+        <ui:OnUiElementAppear.Target>
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="b7252753-321f-4079-a15f-2e2db59dcf92" Selector="&lt;html app='chrome.exe' title='VM Assign Work PROD - UTS (V8.0)' /&gt;&lt;webctrl tag='circle' /&gt;" TimeoutMS="60000" WaitForReady="COMPLETE" />
+        </ui:OnUiElementAppear.Target>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:OnUiElementAppear>
+      <ui:OnUiElementAppear ContinueOnError="{x:Null}" FoundElement="{x:Null}" RepeatForever="{x:Null}" WaitActive="{x:Null}" DisplayName="On Element Appear 'DIV'" sap:VirtualizedContainerService.HintSize="486.6666666666667,435.3333333333333" sap2010:WorkflowViewState.IdRef="OnUiElementAppear_3" WaitVisible="True">
+        <ui:OnUiElementAppear.Body>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,268" sap2010:WorkflowViewState.IdRef="Sequence_5">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:TypeInto AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" ClickBeforeTyping="True" DisplayName="Type Into 'DIV'" EmptyField="True" sap:VirtualizedContainerService.HintSize="388,157.33333333333334" sap2010:WorkflowViewState.IdRef="TypeInto_1" Text="33333322">
+              <ui:TypeInto.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="910c0f10-3a68-4fc5-bcc8-ce8c4faacfbf" InformativeScreenshot="7b6a1fa150ab2bf69e464a77ced488a6" Selector="&lt;html app='chrome.exe' title='VM Assign Work PROD - UTS (V8.0)' /&gt;&lt;webctrl aria-role='textbox' tag='INPUT' rowName='Invoice Number' /&gt;" WaitForReady="COMPLETE">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                </ui:Target>
+              </ui:TypeInto.Target>
+            </ui:TypeInto>
+          </Sequence>
+        </ui:OnUiElementAppear.Body>
+        <ui:OnUiElementAppear.Target>
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="b7252753-321f-4079-a15f-2e2db59dcf92" Selector="&lt;html app='chrome.exe' title='VM Assign Work PROD - UTS (V8.0)' /&gt;&lt;webctrl aria-role='textbox' tag='INPUT' rowName='Invoice Number' /&gt;" TimeoutMS="60000" WaitForReady="COMPLETE" />
+        </ui:OnUiElementAppear.Target>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:OnUiElementAppear>
+      <ui:InterruptibleDoWhile CurrentIndex="{x:Null}" Condition="[IsScreenClosed = False]" DisplayName="Do While" sap:VirtualizedContainerService.HintSize="486.6666666666667,482.6666666666667" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1">
+        <ui:InterruptibleDoWhile.Body>
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="450,312" sap2010:WorkflowViewState.IdRef="Sequence_7">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'DIV'" sap:VirtualizedContainerService.HintSize="388,107.33333333333333" sap2010:WorkflowViewState.IdRef="Click_6" KeyModifiers="None" MouseButton="BTN_LEFT">
+              <ui:Click.CursorPosition>
+                <ui:CursorPosition Position="Center">
+                  <ui:CursorPosition.OffsetX>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:CursorPosition.OffsetX>
+                  <ui:CursorPosition.OffsetY>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:CursorPosition.OffsetY>
+                </ui:CursorPosition>
+              </ui:Click.CursorPosition>
+              <ui:Click.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="612a1199-bf8c-4678-b8cd-97c9be0d5567" InformativeScreenshot="1782ef07e78a6ddac2f0cfa00ed619fe" Selector="&lt;html app='chrome.exe' title='VM Assign Work PROD - UTS (V8.0)' /&gt;&lt;webctrl parentid='map_root' tabindex='0' tag='DIV' class='titleButton close' parentclass='titlePane' /&gt;" WaitForReady="COMPLETE">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                </ui:Target>
+              </ui:Click.Target>
+            </ui:Click>
+            <ui:OnUiElementVanish ContinueOnError="{x:Null}" RepeatForever="{x:Null}" WaitNotActive="{x:Null}" DisplayName="On Element Vanish 'DIV'" sap:VirtualizedContainerService.HintSize="388,54" sap2010:WorkflowViewState.IdRef="OnUiElementVanish_1" WaitNotVisible="True">
+              <ui:OnUiElementVanish.Body>
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="496,196" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Assign sap:VirtualizedContainerService.HintSize="434,85.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_2">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:Boolean">[IsScreenClosed]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                </Sequence>
+              </ui:OnUiElementVanish.Body>
+              <ui:OnUiElementVanish.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="8591e24c-ba72-4886-96e1-7da08ba6ea33" InformativeScreenshot="a96e01064cfdfa16ac870764c5a35440" Selector="&lt;html app='chrome.exe' title='VM Assign Work PROD - UTS (V8.0)' /&gt;&lt;webctrl aaname='Assign Invoice Bulk Update- Ready For Invoicing - Work Point' /&gt;" TimeoutMS="15000" WaitForReady="COMPLETE" />
+              </ui:OnUiElementVanish.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:OnUiElementVanish>
+          </Sequence>
+        </ui:InterruptibleDoWhile.Body>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:InterruptibleDoWhile>
+      <ui:InterruptibleDoWhile CurrentIndex="{x:Null}" Condition="[isBulkTabClosed = False]" DisplayName="Do While" sap:VirtualizedContainerService.HintSize="486.6666666666667,482.6666666666667" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_2">
+        <ui:InterruptibleDoWhile.Body>
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="450,312" sap2010:WorkflowViewState.IdRef="Sequence_10">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'DIV'" sap:VirtualizedContainerService.HintSize="388,107.33333333333333" sap2010:WorkflowViewState.IdRef="Click_7" KeyModifiers="None" MouseButton="BTN_LEFT">
+              <ui:Click.CursorPosition>
+                <ui:CursorPosition Position="Center">
+                  <ui:CursorPosition.OffsetX>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:CursorPosition.OffsetX>
+                  <ui:CursorPosition.OffsetY>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:CursorPosition.OffsetY>
+                </ui:CursorPosition>
+              </ui:Click.CursorPosition>
+              <ui:Click.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="c8f91be6-91d1-48b2-ab49-8f0f6b544b32" InformativeScreenshot="ba87b9b39789a74aa34f81e213e46676" Selector="&lt;html app='chrome.exe' title='VM Assign Work PROD - UTS (V8.0)' /&gt;&lt;webctrl isleaf='1' tag='DIV' class='close-icon jimu-float-trailing' parentclass='title' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:Click.Target>
+            </ui:Click>
+            <ui:OnUiElementVanish ContinueOnError="{x:Null}" RepeatForever="{x:Null}" WaitNotActive="{x:Null}" DisplayName="On Element Vanish 'DIV'" sap:VirtualizedContainerService.HintSize="388,54" sap2010:WorkflowViewState.IdRef="OnUiElementVanish_2" WaitNotVisible="True">
+              <ui:OnUiElementVanish.Body>
+                <Sequence sap:VirtualizedContainerService.HintSize="558,306.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="496,196" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <Assign sap:VirtualizedContainerService.HintSize="434,85.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_3">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:Boolean">[isBulkTabClosed]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                  </Sequence>
+                </Sequence>
+              </ui:OnUiElementVanish.Body>
+              <ui:OnUiElementVanish.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="8591e24c-ba72-4886-96e1-7da08ba6ea33" InformativeScreenshot="a96e01064cfdfa16ac870764c5a35440" Selector="&lt;html app='chrome.exe' title='VM Assign Work PROD - UTS (V8.0)' /&gt;&lt;webctrl isleaf='1' tag='DIV' class='close-icon jimu-float-trailing' parentclass='title' /&gt;" TimeoutMS="15000" WaitForReady="COMPLETE" />
+              </ui:OnUiElementVanish.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:OnUiElementVanish>
+          </Sequence>
+        </ui:InterruptibleDoWhile.Body>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:InterruptibleDoWhile>
+      <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'DIV'" sap:VirtualizedContainerService.HintSize="486.6666666666667,107.33333333333333" sap2010:WorkflowViewState.IdRef="Click_8" KeyModifiers="None" MouseButton="BTN_LEFT">
+        <ui:Click.CursorPosition>
+          <ui:CursorPosition Position="Center">
+            <ui:CursorPosition.OffsetX>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:CursorPosition.OffsetX>
+            <ui:CursorPosition.OffsetY>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:CursorPosition.OffsetY>
+          </ui:CursorPosition>
+        </ui:Click.CursorPosition>
+        <ui:Click.Target>
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="e65383c0-02c7-47b9-95f9-8831fd9d283b" InformativeScreenshot="b5ef76f65edb2c4245edafeef6b67dea" Selector="&lt;html app='chrome.exe' title='VM Assign Work PROD - UTS (V8.0)' /&gt;&lt;webctrl aria-role='button' tag='DIV' aria-label='Open Attribute Table' /&gt;">
+            <ui:Target.TimeoutMS>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:Target.TimeoutMS>
+            <ui:Target.WaitForReady>
+              <InArgument x:TypeArguments="ui:WaitForReady" />
+            </ui:Target.WaitForReady>
+          </ui:Target>
+        </ui:Click.Target>
+      </ui:Click>
+    </Sequence>
+  </Sequence>
+</Activity>
